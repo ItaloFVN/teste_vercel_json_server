@@ -1,14 +1,18 @@
 // See https://github.com/typicode/json-server#module
-async function obterDb(){
-    var response = await fetch(`https://nutrischedule.vercel.app/database/db.json`)
-    return await response.json();
-}
+var db = {};
+
+const fetch = require('node-fetch');
+fetch(`https://nutrischedule.vercel.app/database/db.json`)
+    .then((response) => response.json())
+    .then((dados) => {
+        db = dados
+    });
 
 const fs = require('fs')
 //const db = JSON.parse(fs.readFileSync('database/db.json'))
 const jsonServer = require('json-server')
 const server = jsonServer.create()
-const router = jsonServer.router(await obterDb())
+const router = jsonServer.router(db)
 const middlewares = jsonServer.defaults()
 
 server.use(middlewares)
