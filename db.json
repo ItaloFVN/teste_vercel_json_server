@@ -1,15 +1,9 @@
 {
-    "usuarios": [
-      {
-        "id": 1,
-        "nome": "Paulo Henriques",
-        "dataNascimento": "1998-01-18T00:00:00.000Z",
-        "peso": 75,
-        "altura": 1.8,
-        "idGenero": 1,
-        "email": "paulo.henrique@email.com",
-        "senha": "teste1",
-        "status": true
-      }
-    ]
-  }
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" }
+}
