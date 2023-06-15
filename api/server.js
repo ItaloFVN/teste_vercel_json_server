@@ -1,9 +1,10 @@
 // See https://github.com/typicode/json-server#module
 const fs = require('fs')
-var db = fetch(`https://nutrischedule.vercel.app/database/db.json`)
+var db = {}
+fetch(`https://nutrischedule.vercel.app/database/db.json`)
         .then((response) => response.json())
         .then((dados) => {
-            console.log(dados)
+            db = dados
         });
 //const db = JSON.parse(fs.readFileSync('database/db.json'))
 const jsonServer = require('json-server')
